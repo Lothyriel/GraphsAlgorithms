@@ -53,6 +53,7 @@ public class jnlGrafos extends javax.swing.JFrame implements Cloneable {
         bt_busca = new javax.swing.JButton();
         bt_busca1 = new javax.swing.JButton();
         bt_busca2 = new javax.swing.JButton();
+        bt_busca3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Playground de Grafos");
@@ -141,6 +142,13 @@ public class jnlGrafos extends javax.swing.JFrame implements Cloneable {
             }
         });
 
+        bt_busca3.setText("Kruskall");
+        bt_busca3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_busca3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -156,7 +164,8 @@ public class jnlGrafos extends javax.swing.JFrame implements Cloneable {
                     .addComponent(bt_busca, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(bt_busca2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bt_busca1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bt_busca1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bt_busca3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,6 +191,8 @@ public class jnlGrafos extends javax.swing.JFrame implements Cloneable {
                         .addComponent(bt_busca2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bt_busca1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_busca3)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -268,6 +279,10 @@ public class jnlGrafos extends javax.swing.JFrame implements Cloneable {
         }
     }//GEN-LAST:event_bt_busca2ActionPerformed
 
+    private void bt_busca3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_busca3ActionPerformed
+        a.Kruskal(copiar());
+    }//GEN-LAST:event_bt_busca3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -313,6 +328,7 @@ public class jnlGrafos extends javax.swing.JFrame implements Cloneable {
     private javax.swing.JButton bt_busca;
     private javax.swing.JButton bt_busca1;
     private javax.swing.JButton bt_busca2;
+    private javax.swing.JButton bt_busca3;
     private javax.swing.JButton btnArcos;
     private javax.swing.JButton btnCarregar;
     private javax.swing.JButton btnSalvar;

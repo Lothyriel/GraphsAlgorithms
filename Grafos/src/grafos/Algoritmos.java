@@ -1,9 +1,12 @@
 package grafos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.Stack;
+import java.util.TreeSet;
 
 /**
  * Nesta classe devem ser implementados todos os métodos de grafos de forma
@@ -21,7 +24,7 @@ public class Algoritmos {
         } else {
             ArrayList<Vertice> ordemVisita = new ArrayList();
             Queue<Vertice> fila = new LinkedList();
-            
+
             for (Vertice verticeAtual : g.obterVertices()) {
                 if (inicio.equals(verticeAtual)) {
                     verticeAtual.visitar();
@@ -58,7 +61,7 @@ public class Algoritmos {
         } else {
             ArrayList<Vertice> ordemVisita = new ArrayList();
             Stack<Vertice> pilha = new Stack<Vertice>();
-            
+
             for (Vertice verticeAtual : g.obterVertices()) {
                 if (inicio.equals(verticeAtual)) {
                     verticeAtual.visitar();
@@ -104,10 +107,10 @@ public class Algoritmos {
                     ordemVisita.add(verticeAtual);
                 }
             }
-            
+
             System.out.println("Inicio: " + inicio + "\n");
             while (!Q.isEmpty()) {
-               Vertice u = Q.remove(removeVerticeMenorDist(Q));
+                Vertice u = Q.remove(VerticeMenorDist(Q));
                 //S.add(u);
                 for (Arco v : u.getArcos()) {
                     if (v.getDestino().getDistancia() > u.getDistancia() + v.getPeso()) {
@@ -132,7 +135,7 @@ public class Algoritmos {
         }
     }
 
-    public static int removeVerticeMenorDist(ArrayList<Vertice> Q) {
+    public static int VerticeMenorDist(ArrayList<Vertice> Q) {
         Vertice menor = new Vertice(null);
         menor.setDistanciaInf();
         int j = 0;
@@ -142,5 +145,22 @@ public class Algoritmos {
             }
         }
         return j;
+    }
+
+    public static void Kruskal(Grafo g) {
+        ArrayList<Arco> arcos = g.obterTodosOsArcos();
+        ArrayList<Arco> agm = new ArrayList();
+        Collections.sort(arcos);
+        System.out.println(arcos);
+        for (Arco a : arcos) {
+            for (Arco b : agm) {
+                if (a.getDestino() != b.getDestino()) {
+                    System.out.println("sexo");
+                }else{
+                    agm.add(a);
+                    System.out.println("cu");
+                }
+            }
+        }
     }
 }
